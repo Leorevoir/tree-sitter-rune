@@ -1,11 +1,47 @@
 /**
  * @file Rune tree-sitter syntax parser
- * @author Leorevoir <leo.quinzler@epitech.eu>
+ * @author Leorevoir
  * @license MIT
  */
 
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
+
+/**
+ * constants
+ */
+
+const KEYWORDS = [
+  "def",
+  "return",
+  "struct",
+  "if",
+  "else",
+  "for",
+  "to",
+  "override",
+  "in",
+];
+
+const PRIMITIVES = [
+  "i8",
+  "i16",
+  "i32",
+  "i64",
+  "u8",
+  "u16",
+  "u32",
+  "f32",
+  "f64",
+  "bool",
+  "string",
+  "any",
+  "null",
+];
+
+/**
+ * grammar
+ */
 
 module.exports = grammar({
   name: "rune",
@@ -13,30 +49,14 @@ module.exports = grammar({
   extras: ($) => [/\s/, $.comment],
 
   rules: {
-    source_file: ($) => repeat(choice($._keyword, $.identifier, $.symbol)),
+    source_file: ($) =>
+      repeat(choice($._keyword, $.primitive_type, $.identifier, $.symbol)),
 
-    _keyword: ($) =>
-      choice(
-        $.kw_def,
-        $.kw_return,
-        $.kw_struct,
-        $.kw_if,
-        $.kw_else,
-        $.kw_for,
-        $.kw_to,
-        $.kw_override,
-        $.kw_in,
-      ),
+    _keyword: ($) => choice(...KEYWORDS.map((kw) => $[`kw_${kw}`])),
 
-    kw_def: ($) => "def",
-    kw_return: ($) => "return",
-    kw_struct: ($) => "struct",
-    kw_if: ($) => "if",
-    kw_else: ($) => "else",
-    kw_for: ($) => "for",
-    kw_to: ($) => "to",
-    kw_override: ($) => "override",
-    kw_in: ($) => "in",
+    ...Object.fromEntries(KEYWORDS.map((kw) => [`kw_${kw}`, () => kw])),
+
+    primitive_type: ($) => choice(...PRIMITIVES),
 
     identifier: ($) => /[a-zA-Z_]\w*/,
     symbol: ($) => /[^\s\w]/,
