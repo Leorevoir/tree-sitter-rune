@@ -1,6 +1,16 @@
 [
   {
+    "type": "operator",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "primitive_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "punctuation",
     "named": true,
     "fields": {}
   },
@@ -66,19 +76,107 @@
           "named": true
         },
         {
+          "type": "operator",
+          "named": true
+        },
+        {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "punctuation",
           "named": true
         },
         {
           "type": "string_literal",
           "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "?",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
   },
   {
     "type": "any",
@@ -182,10 +280,6 @@
     "named": true
   },
   {
-    "type": "symbol",
-    "named": true
-  },
-  {
     "type": "u16",
     "named": false
   },
@@ -195,6 +289,18 @@
   },
   {
     "type": "u8",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "~>",
     "named": false
   }
 ]

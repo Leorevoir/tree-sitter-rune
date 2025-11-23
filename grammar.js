@@ -7,10 +7,6 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-/**
- * constants
- */
-
 const KEYWORDS = [
   "def",
   "return",
@@ -40,9 +36,23 @@ const PRIMITIVES = [
   "null",
 ];
 
-/**
- * grammar
- */
+const OPERATORS = [
+  "+",
+  "-",
+  "*",
+  "/",
+  "=",
+  "==",
+  "!=",
+  "<",
+  ">",
+  "<=",
+  ">=",
+  "->",
+  "~>",
+];
+
+const PUNCTUATION = ["(", ")", "{", "}", "[", "]", ",", ".", ":", ";", "?"];
 
 module.exports = grammar({
   name: "rune",
@@ -59,7 +69,8 @@ module.exports = grammar({
           $.char_literal,
           $.string_literal,
           $.number_literal,
-          $.symbol,
+          $.operator,
+          $.punctuation,
         ),
       ),
 
@@ -73,11 +84,12 @@ module.exports = grammar({
 
     char_literal: ($) => token(seq("'", choice(/[^'\\]/, seq("\\", /./)), "'")),
 
-    string_literal: ($) => token(/"[^"\\]*(\\.[^"\\]*)*"/),
+    string_literal: ($) => token(/"([^"\\]|\\.)*"/),
 
-    number_literal: ($) => token(/\d+(\.\d+)?/),
+    number_literal: ($) => token(/\d[\d_]*(\.\d+)?/),
 
-    symbol: ($) => /[^\s\w]/,
+    operator: ($) => choice(...OPERATORS),
+    punctuation: ($) => choice(...PUNCTUATION),
 
     comment: (_) =>
       token(
