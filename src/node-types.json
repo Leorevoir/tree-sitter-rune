@@ -14,6 +14,10 @@
       "required": false,
       "types": [
         {
+          "type": "char_literal",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -58,7 +62,15 @@
           "named": true
         },
         {
+          "type": "number_literal",
+          "named": true
+        },
+        {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "string_literal",
           "named": true
         },
         {
@@ -75,6 +87,10 @@
   {
     "type": "bool",
     "named": false
+  },
+  {
+    "type": "char_literal",
+    "named": true
   },
   {
     "type": "comment",
@@ -154,8 +170,16 @@
     "named": false
   },
   {
+    "type": "number_literal",
+    "named": true
+  },
+  {
     "type": "string",
     "named": false
+  },
+  {
+    "type": "string_literal",
+    "named": true
   },
   {
     "type": "symbol",

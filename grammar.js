@@ -51,7 +51,17 @@ module.exports = grammar({
 
   rules: {
     source_file: ($) =>
-      repeat(choice($._keyword, $.primitive_type, $.identifier, $.symbol)),
+      repeat(
+        choice(
+          $._keyword,
+          $.primitive_type,
+          $.identifier,
+          $.char_literal,
+          $.string_literal,
+          $.number_literal,
+          $.symbol,
+        ),
+      ),
 
     _keyword: ($) => choice(...KEYWORDS.map((kw) => $[`kw_${kw}`])),
 
@@ -60,6 +70,13 @@ module.exports = grammar({
     primitive_type: ($) => choice(...PRIMITIVES),
 
     identifier: ($) => /[a-zA-Z_]\w*/,
+
+    char_literal: ($) => token(seq("'", choice(/[^'\\]/, seq("\\", /./)), "'")),
+
+    string_literal: ($) => token(/"[^"\\]*(\\.[^"\\]*)*"/),
+
+    number_literal: ($) => token(/\d+(\.\d+)?/),
+
     symbol: ($) => /[^\s\w]/,
 
     comment: (_) =>

@@ -24,6 +24,14 @@
 (primitive_type) @type.builtin
 
 ;----------------------------------
+; literals
+;---------------------------------
+
+(char_literal) @character
+(string_literal) @string
+(number_literal) @number
+
+;----------------------------------
 ; identifiers
 ;---------------------------------
 
