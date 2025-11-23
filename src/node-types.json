@@ -76,10 +76,6 @@
           "named": true
         },
         {
-          "type": "op_try",
-          "named": true
-        },
-        {
           "type": "operator",
           "named": true
         },
@@ -168,6 +164,10 @@
   },
   {
     "type": ">=",
+    "named": false
+  },
+  {
+    "type": "?",
     "named": false
   },
   {
@@ -269,10 +269,6 @@
   },
   {
     "type": "number_literal",
-    "named": true
-  },
-  {
-    "type": "op_try",
     "named": true
   },
   {

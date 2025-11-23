@@ -37,10 +37,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "op_try"
-          },
-          {
-            "type": "SYMBOL",
             "name": "punctuation"
           }
         ]
@@ -298,12 +294,12 @@
         {
           "type": "STRING",
           "value": "~>"
+        },
+        {
+          "type": "STRING",
+          "value": "?"
         }
       ]
-    },
-    "op_try": {
-      "type": "STRING",
-      "value": "?"
     },
     "punctuation": {
       "type": "CHOICE",

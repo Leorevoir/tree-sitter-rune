@@ -60,7 +60,7 @@ enum ts_symbol_identifiers {
   anon_sym_GT_EQ = 38,
   anon_sym_DASH_GT = 39,
   anon_sym_TILDE_GT = 40,
-  sym_op_try = 41,
+  anon_sym_QMARK = 41,
   anon_sym_LPAREN = 42,
   anon_sym_RPAREN = 43,
   anon_sym_LBRACE = 44,
@@ -122,7 +122,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_GT_EQ] = ">=",
   [anon_sym_DASH_GT] = "->",
   [anon_sym_TILDE_GT] = "~>",
-  [sym_op_try] = "op_try",
+  [anon_sym_QMARK] = "\?",
   [anon_sym_LPAREN] = "(",
   [anon_sym_RPAREN] = ")",
   [anon_sym_LBRACE] = "{",
@@ -184,7 +184,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_GT_EQ] = anon_sym_GT_EQ,
   [anon_sym_DASH_GT] = anon_sym_DASH_GT,
   [anon_sym_TILDE_GT] = anon_sym_TILDE_GT,
-  [sym_op_try] = sym_op_try,
+  [anon_sym_QMARK] = anon_sym_QMARK,
   [anon_sym_LPAREN] = anon_sym_LPAREN,
   [anon_sym_RPAREN] = anon_sym_RPAREN,
   [anon_sym_LBRACE] = anon_sym_LBRACE,
@@ -369,9 +369,9 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [sym_op_try] = {
+  [anon_sym_QMARK] = {
     .visible = true,
-    .named = true,
+    .named = false,
   },
   [anon_sym_LPAREN] = {
     .visible = true,
@@ -1162,7 +1162,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_TILDE_GT);
       END_STATE();
     case 99:
-      ACCEPT_TOKEN(sym_op_try);
+      ACCEPT_TOKEN(anon_sym_QMARK);
       END_STATE();
     case 100:
       ACCEPT_TOKEN(anon_sym_LPAREN);
@@ -1261,7 +1261,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_GT_EQ] = ACTIONS(1),
     [anon_sym_DASH_GT] = ACTIONS(1),
     [anon_sym_TILDE_GT] = ACTIONS(1),
-    [sym_op_try] = ACTIONS(1),
+    [anon_sym_QMARK] = ACTIONS(1),
     [anon_sym_LPAREN] = ACTIONS(1),
     [anon_sym_RPAREN] = ACTIONS(1),
     [anon_sym_LBRACE] = ACTIONS(1),
@@ -1322,7 +1322,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_GT_EQ] = ACTIONS(13),
     [anon_sym_DASH_GT] = ACTIONS(13),
     [anon_sym_TILDE_GT] = ACTIONS(13),
-    [sym_op_try] = ACTIONS(11),
+    [anon_sym_QMARK] = ACTIONS(13),
     [anon_sym_LPAREN] = ACTIONS(17),
     [anon_sym_RPAREN] = ACTIONS(17),
     [anon_sym_LBRACE] = ACTIONS(17),
@@ -1382,7 +1382,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_GT_EQ] = ACTIONS(13),
     [anon_sym_DASH_GT] = ACTIONS(13),
     [anon_sym_TILDE_GT] = ACTIONS(13),
-    [sym_op_try] = ACTIONS(23),
+    [anon_sym_QMARK] = ACTIONS(13),
     [anon_sym_LPAREN] = ACTIONS(17),
     [anon_sym_RPAREN] = ACTIONS(17),
     [anon_sym_LBRACE] = ACTIONS(17),
@@ -1442,7 +1442,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_GT_EQ] = ACTIONS(36),
     [anon_sym_DASH_GT] = ACTIONS(36),
     [anon_sym_TILDE_GT] = ACTIONS(36),
-    [sym_op_try] = ACTIONS(33),
+    [anon_sym_QMARK] = ACTIONS(36),
     [anon_sym_LPAREN] = ACTIONS(42),
     [anon_sym_RPAREN] = ACTIONS(42),
     [anon_sym_LBRACE] = ACTIONS(42),
@@ -1497,7 +1497,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_GT_EQ] = ACTIONS(45),
     [anon_sym_DASH_GT] = ACTIONS(45),
     [anon_sym_TILDE_GT] = ACTIONS(45),
-    [sym_op_try] = ACTIONS(45),
+    [anon_sym_QMARK] = ACTIONS(45),
     [anon_sym_LPAREN] = ACTIONS(45),
     [anon_sym_RPAREN] = ACTIONS(45),
     [anon_sym_LBRACE] = ACTIONS(45),
@@ -1552,7 +1552,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_GT_EQ] = ACTIONS(49),
     [anon_sym_DASH_GT] = ACTIONS(49),
     [anon_sym_TILDE_GT] = ACTIONS(49),
-    [sym_op_try] = ACTIONS(49),
+    [anon_sym_QMARK] = ACTIONS(49),
     [anon_sym_LPAREN] = ACTIONS(49),
     [anon_sym_RPAREN] = ACTIONS(49),
     [anon_sym_LBRACE] = ACTIONS(49),
@@ -1607,7 +1607,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_GT_EQ] = ACTIONS(53),
     [anon_sym_DASH_GT] = ACTIONS(53),
     [anon_sym_TILDE_GT] = ACTIONS(53),
-    [sym_op_try] = ACTIONS(53),
+    [anon_sym_QMARK] = ACTIONS(53),
     [anon_sym_LPAREN] = ACTIONS(53),
     [anon_sym_RPAREN] = ACTIONS(53),
     [anon_sym_LBRACE] = ACTIONS(53),
