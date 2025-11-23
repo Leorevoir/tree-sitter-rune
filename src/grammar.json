@@ -37,6 +37,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "op_try"
+          },
+          {
+            "type": "SYMBOL",
             "name": "punctuation"
           }
         ]
@@ -297,6 +301,10 @@
         }
       ]
     },
+    "op_try": {
+      "type": "STRING",
+      "value": "?"
+    },
     "punctuation": {
       "type": "CHOICE",
       "members": [
@@ -339,10 +347,6 @@
         {
           "type": "STRING",
           "value": ";"
-        },
-        {
-          "type": "STRING",
-          "value": "?"
         }
       ]
     },

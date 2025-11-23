@@ -52,7 +52,7 @@ const OPERATORS = [
   "~>",
 ];
 
-const PUNCTUATION = ["(", ")", "{", "}", "[", "]", ",", ".", ":", ";", "?"];
+const PUNCTUATION = ["(", ")", "{", "}", "[", "]", ",", ".", ":", ";"];
 
 module.exports = grammar({
   name: "rune",
@@ -70,6 +70,7 @@ module.exports = grammar({
           $.string_literal,
           $.number_literal,
           $.operator,
+          $.op_try,
           $.punctuation,
         ),
       ),
@@ -89,6 +90,7 @@ module.exports = grammar({
     number_literal: ($) => token(/\d[\d_]*(\.\d+)?/),
 
     operator: ($) => choice(...OPERATORS),
+    op_try: ($) => "?",
     punctuation: ($) => choice(...PUNCTUATION),
 
     comment: (_) =>

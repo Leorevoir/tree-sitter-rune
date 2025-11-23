@@ -41,3 +41,11 @@
 ;---------------------------------
 
 (identifier) @variable
+
+;----------------------------------
+; symbols
+;---------------------------------
+
+(operator) @operator
+(op_try) @operator.keyword
+(punctuation) @punctuation.delimiter
