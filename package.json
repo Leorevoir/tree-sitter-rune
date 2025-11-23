@@ -2,11 +2,12 @@
   "name": "tree-sitter-rune",
   "version": "0.1.0",
   "description": "Rune tree-sitter syntax parser",
-  "repository": "https://github.com/tree-sitter/tree-sitter-rune",
+  "repository": "https://github.com/leorevoir/tree-sitter-rune",
   "license": "MIT",
   "author": {
     "name": "Leorevoir",
-    "email": "leo.quinzler@epitech.eu"
+    "email": "leo.quinzler@epitech.eu",
+    "url": "https://github.com/leorevoir"
   },
   "main": "bindings/node",
   "types": "bindings/node",
