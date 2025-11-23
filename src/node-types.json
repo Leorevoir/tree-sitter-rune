@@ -46,6 +46,10 @@
           "named": true
         },
         {
+          "type": "kw_self",
+          "named": true
+        },
+        {
           "type": "kw_struct",
           "named": true
         },
@@ -131,6 +135,10 @@
   },
   {
     "type": "kw_return",
+    "named": true
+  },
+  {
+    "type": "kw_self",
     "named": true
   },
   {

@@ -21,6 +21,7 @@ const KEYWORDS = [
   "to",
   "override",
   "in",
+  "self",
 ];
 
 const PRIMITIVES = [

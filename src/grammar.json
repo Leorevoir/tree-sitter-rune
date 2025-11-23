@@ -64,6 +64,10 @@
         {
           "type": "SYMBOL",
           "name": "kw_in"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_self"
         }
       ]
     },
@@ -102,6 +106,10 @@
     "kw_in": {
       "type": "STRING",
       "value": "in"
+    },
+    "kw_self": {
+      "type": "STRING",
+      "value": "self"
     },
     "primitive_type": {
       "type": "CHOICE",

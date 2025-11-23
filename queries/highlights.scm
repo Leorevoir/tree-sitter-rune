@@ -15,6 +15,7 @@
 (kw_in) @keyword.operator
 (kw_override) @keyword
 (kw_to) @keyword
+(kw_self) @variable.builtin
 
 ;----------------------------------
 ; types
