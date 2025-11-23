@@ -1,0 +1,165 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "rune",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_keyword"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "symbol"
+          }
+        ]
+      }
+    },
+    "_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "kw_def"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_return"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_if"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_else"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_for"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_to"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_override"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "kw_in"
+        }
+      ]
+    },
+    "kw_def": {
+      "type": "STRING",
+      "value": "def"
+    },
+    "kw_return": {
+      "type": "STRING",
+      "value": "return"
+    },
+    "kw_struct": {
+      "type": "STRING",
+      "value": "struct"
+    },
+    "kw_if": {
+      "type": "STRING",
+      "value": "if"
+    },
+    "kw_else": {
+      "type": "STRING",
+      "value": "else"
+    },
+    "kw_for": {
+      "type": "STRING",
+      "value": "for"
+    },
+    "kw_to": {
+      "type": "STRING",
+      "value": "to"
+    },
+    "kw_override": {
+      "type": "STRING",
+      "value": "override"
+    },
+    "kw_in": {
+      "type": "STRING",
+      "value": "in"
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_]\\w*"
+    },
+    "symbol": {
+      "type": "PATTERN",
+      "value": "[^\\s\\w]"
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "//"
+              },
+              {
+                "type": "PATTERN",
+                "value": ".*"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "/*"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[^*]*\\*+([^/*][^*]*\\*+)*"
+              },
+              {
+                "type": "STRING",
+                "value": "/"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}

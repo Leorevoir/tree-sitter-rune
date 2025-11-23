@@ -1,0 +1,23 @@
+(comment) @comment
+
+;----------------------------------
+; keywords
+;---------------------------------
+
+(kw_def) @keyword.function
+(kw_struct) @keyword.type
+
+(kw_if) @keyword.conditional
+(kw_else) @keyword.conditional
+(kw_for) @keyword.repeat
+(kw_return) @keyword.return
+
+(kw_in) @keyword.operator
+(kw_override) @keyword
+(kw_to) @keyword
+
+;----------------------------------
+; identifiers
+;---------------------------------
+
+(identifier) @variable
