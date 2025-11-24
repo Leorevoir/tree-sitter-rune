@@ -40,6 +40,9 @@
 "?" @operator
 "=" @operator
 
+"->" @operator
+"~>" @operator
+
 ":" @punctuation.delimiter
 ";" @punctuation.delimiter
 "." @punctuation.delimiter
