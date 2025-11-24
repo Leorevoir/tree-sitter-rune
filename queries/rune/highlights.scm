@@ -74,10 +74,10 @@
 (variable_declaration name: (identifier) @variable)
 (assignment_statement left: (identifier) @variable)
 
+(identifier) @variable
+
 ((identifier) @variable.builtin
  (#eq? @variable.builtin "self"))
-
-(identifier) @variable
 
 ;----------------------------------
 ; functions
