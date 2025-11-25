@@ -10,6 +10,7 @@
 "else" @keyword.conditional
 "for" @keyword.repeat
 "in" @keyword.operator
+"to" @keyword.operator
 "return" @keyword.return
 "override" @keyword.modifier
 (self_parameter) @variable.builtin
@@ -37,11 +38,16 @@
 ;---------------------------------
 
 (binary_expression operator: _ @operator)
+(prefix_expression operator: _ @operator)
+(postfix_expression operator: _ @operator)
+
 "?" @operator
 "=" @operator
 
 "->" @operator
 "~>" @operator
+"++" @operator
+"--" @operator
 
 ":" @punctuation.delimiter
 ";" @punctuation.delimiter

@@ -60,12 +60,7 @@ module.exports = grammar({
 
   extras: ($) => [/\s/, $.comment],
 
-  conflicts: ($) => [
-    [$.struct_expression, $.block],
-
-    [$.type_identifier, $._expression],
-    [$.type_identifier, $.identifier],
-  ],
+  conflicts: ($) => [[$.type_identifier, $._expression]],
 
   rules: {
     source_file: ($) => repeat($._top_level_item),
@@ -165,9 +160,23 @@ module.exports = grammar({
     for_statement: ($) =>
       seq(
         "for",
-        field("left", $.identifier),
-        "in",
-        field("right", $._expression),
+        choice(
+          seq(field("left", $.identifier), "in", field("right", $._expression)),
+
+          seq(
+            field("iterator", $.identifier),
+            "=",
+            field("start", $._expression),
+            "to",
+            field("end", $._expression),
+          ),
+
+          seq(
+            field("iterator", $.identifier),
+            "to",
+            field("end", $._expression),
+          ),
+        ),
         field("body", $.block),
       ),
 
@@ -179,12 +188,32 @@ module.exports = grammar({
         $.subscript_expression,
         $.struct_expression,
         $.try_expression,
+        $.prefix_expression,
+        $.postfix_expression,
         $.identifier,
         $.number_literal,
         $.string_literal,
         $.char_literal,
         $.boolean_literal,
         $.null_literal,
+      ),
+
+    prefix_expression: ($) =>
+      prec.right(
+        PREC.CALL,
+        seq(
+          field("operator", choice("++", "--")),
+          field("argument", $._expression),
+        ),
+      ),
+
+    postfix_expression: ($) =>
+      prec.left(
+        PREC.FIELD,
+        seq(
+          field("argument", $._expression),
+          field("operator", choice("++", "--")),
+        ),
       ),
 
     binary_expression: ($) =>
