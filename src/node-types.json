@@ -2101,6 +2101,10 @@
     "named": false
   },
   {
+    "type": "u64",
+    "named": false
+  },
+  {
     "type": "u8",
     "named": false
   },
