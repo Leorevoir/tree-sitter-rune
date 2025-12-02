@@ -115,6 +115,9 @@ module.exports = grammar({
         $.return_statement,
         $.if_statement,
         $.for_statement,
+        $.loop_statement,
+        $.stop_statement,
+        $.next_statement,
         $.variable_declaration,
         $.assignment_statement,
         $.expression_statement,
@@ -179,6 +182,12 @@ module.exports = grammar({
         ),
         field("body", $.block),
       ),
+
+    loop_statement: ($) => seq("loop", field("body", $.block)),
+
+    stop_statement: ($) => seq("stop", ";"),
+
+    next_statement: ($) => seq("next", ";"),
 
     _expression: ($) =>
       choice(

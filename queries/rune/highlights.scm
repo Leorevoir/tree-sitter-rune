@@ -9,11 +9,15 @@
 "if" @keyword.conditional
 "else" @keyword.conditional
 "for" @keyword.repeat
+"loop" @keyword.repeat
 "in" @keyword.operator
 "to" @keyword.operator
 "return" @keyword.return
 "override" @keyword.modifier
 (self_parameter) @variable.builtin
+
+"stop" @keyword.repeat
+"next" @keyword.repeat
 
 ;----------------------------------
 ; types

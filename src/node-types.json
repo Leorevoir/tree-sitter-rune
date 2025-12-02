@@ -1119,6 +1119,27 @@
     }
   },
   {
+    "type": "loop_statement",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "next_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "null_literal",
     "named": true,
     "fields": {}
@@ -1457,7 +1478,19 @@
           "named": true
         },
         {
+          "type": "loop_statement",
+          "named": true
+        },
+        {
+          "type": "next_statement",
+          "named": true
+        },
+        {
           "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "stop_statement",
           "named": true
         },
         {
@@ -1466,6 +1499,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "stop_statement",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "struct_body",
@@ -1999,6 +2037,14 @@
     "named": false
   },
   {
+    "type": "loop",
+    "named": false
+  },
+  {
+    "type": "next",
+    "named": false
+  },
+  {
     "type": "null",
     "named": false
   },
@@ -2017,6 +2063,10 @@
   {
     "type": "self_parameter",
     "named": true
+  },
+  {
+    "type": "stop",
+    "named": false
   },
   {
     "type": "string",
