@@ -203,6 +203,7 @@ module.exports = grammar({
         $.number_literal,
         $.string_literal,
         $.char_literal,
+        $.char_literal,
         $.boolean_literal,
         $.null_literal,
       ),
@@ -295,7 +296,7 @@ module.exports = grammar({
 
     number_literal: ($) => /\d[\d_]*(\.\d+)?/,
     string_literal: ($) => /"[^"]*"/,
-    char_literal: ($) => /'[^']'/,
+    char_literal: ($) => /'(\\.|[^\\'])'/,
     boolean_literal: ($) => choice("true", "false"),
     null_literal: ($) => "null",
 
