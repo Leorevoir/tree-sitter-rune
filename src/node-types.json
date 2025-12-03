@@ -20,6 +20,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char_literal",
           "named": true
         },
@@ -105,6 +109,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -170,6 +178,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -281,6 +293,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -346,6 +362,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "cast_expression",
           "named": true
         },
         {
@@ -435,6 +455,96 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "null_literal",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
+            "type": "prefix_expression",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "struct_expression",
+            "named": true
+          },
+          {
+            "type": "subscript_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "cast_expression",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -500,6 +610,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "cast_expression",
           "named": true
         },
         {
@@ -610,6 +724,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -693,6 +811,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -768,6 +890,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -853,6 +979,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -912,6 +1042,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1058,6 +1192,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1214,6 +1352,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -1293,6 +1435,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1380,6 +1526,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "cast_expression",
           "named": true
         },
         {
@@ -1597,6 +1747,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char_literal",
             "named": true
           },
@@ -1656,6 +1810,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1724,6 +1882,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1821,6 +1983,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1965,6 +2131,10 @@
   },
   {
     "type": "any",
+    "named": false
+  },
+  {
+    "type": "as",
     "named": false
   },
   {

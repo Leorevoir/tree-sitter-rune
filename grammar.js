@@ -16,10 +16,11 @@ const PREC = {
   RELATIONAL: 5,
   ADD: 6,
   MULTIPLY: 7,
-  TRY: 8,
-  CALL: 9,
-  FIELD: 10,
-  SUBSCRIPT: 11,
+  CAST: 8,
+  TRY: 9,
+  CALL: 10,
+  FIELD: 11,
+  SUBSCRIPT: 12,
 };
 
 const PRIMITIVES = [
@@ -199,12 +200,12 @@ module.exports = grammar({
         $.subscript_expression,
         $.struct_expression,
         $.try_expression,
+        $.cast_expression,
         $.prefix_expression,
         $.postfix_expression,
         $.identifier,
         $.number_literal,
         $.string_literal,
-        $.char_literal,
         $.char_literal,
         $.boolean_literal,
         $.null_literal,
@@ -276,6 +277,12 @@ module.exports = grammar({
 
     try_expression: ($) =>
       prec(PREC.TRY, seq(field("expression", $._expression), "?")),
+
+    cast_expression: ($) =>
+      prec.left(
+        PREC.CAST,
+        seq(field("value", $._expression), "as", field("type", $._type)),
+      ),
 
     struct_expression: ($) =>
       seq(

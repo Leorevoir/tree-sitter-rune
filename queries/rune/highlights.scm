@@ -47,6 +47,7 @@
 
 "?" @operator
 "=" @operator
+"as" @keyword.operator
 
 "->" @operator
 "~>" @operator
