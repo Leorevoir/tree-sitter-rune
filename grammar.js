@@ -35,6 +35,7 @@ const PRIMITIVES = [
   "f64",
   "bool",
   "string",
+  "char",
   "any",
   "null",
 ];

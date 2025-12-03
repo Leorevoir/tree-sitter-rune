@@ -351,6 +351,10 @@
         },
         {
           "type": "STRING",
+          "value": "char"
+        },
+        {
+          "type": "STRING",
           "value": "any"
         },
         {
