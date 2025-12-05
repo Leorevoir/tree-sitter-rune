@@ -16,11 +16,12 @@ const PREC = {
   RELATIONAL: 5,
   ADD: 6,
   MULTIPLY: 7,
-  CAST: 8,
-  TRY: 9,
-  CALL: 10,
-  FIELD: 11,
-  SUBSCRIPT: 12,
+  UNARY: 8,
+  CAST: 9,
+  TRY: 10,
+  CALL: 11,
+  FIELD: 12,
+  SUBSCRIPT: 13,
 };
 
 const PRIMITIVES = [
@@ -201,6 +202,7 @@ module.exports = grammar({
         $.struct_expression,
         $.try_expression,
         $.cast_expression,
+        $.unary_expression,
         $.prefix_expression,
         $.postfix_expression,
         $.identifier,
@@ -216,6 +218,15 @@ module.exports = grammar({
         PREC.CALL,
         seq(
           field("operator", choice("++", "--")),
+          field("argument", $._expression),
+        ),
+      ),
+
+    unary_expression: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(
+          field("operator", choice("-", "!")),
           field("argument", $._expression),
         ),
       ),

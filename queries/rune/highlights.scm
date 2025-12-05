@@ -43,6 +43,7 @@
 
 (binary_expression operator: _ @operator)
 (prefix_expression operator: _ @operator)
+(unary_expression operator: _ @operator)
 (postfix_expression operator: _ @operator)
 
 "?" @operator
