@@ -85,6 +85,7 @@
 
 (variable_declaration name: (identifier) @variable)
 (assignment_statement left: (identifier) @variable)
+(for_statement iterator: (identifier) @variable)
 
 (identifier) @variable
 

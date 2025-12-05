@@ -53,6 +53,12 @@ const BINARY_OPERATORS = [
   [">", PREC.RELATIONAL],
   ["<=", PREC.RELATIONAL],
   [">=", PREC.RELATIONAL],
+  ["+=", PREC.ASSIGNMENT],
+  ["-=", PREC.ASSIGNMENT],
+  ["*=", PREC.ASSIGNMENT],
+  ["/=", PREC.ASSIGNMENT],
+  ["&&", PREC.LOGICAL_AND],
+  ["||", PREC.LOGICAL_OR],
 ];
 
 const comma_sep = (rule) => {
@@ -172,6 +178,7 @@ module.exports = grammar({
 
           seq(
             field("iterator", $.identifier),
+            optional(seq(":", field("type", $._type))),
             "=",
             field("start", $._expression),
             "to",
