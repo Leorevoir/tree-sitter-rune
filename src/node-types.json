@@ -251,11 +251,19 @@
             "named": false
           },
           {
+            "type": "%",
+            "named": false
+          },
+          {
             "type": "&&",
             "named": false
           },
           {
             "type": "*",
+            "named": false
+          },
+          {
+            "type": "**",
             "named": false
           },
           {
@@ -304,6 +312,14 @@
           },
           {
             "type": ">=",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": false
+          },
+          {
+            "type": "or",
             "named": false
           },
           {
@@ -2258,6 +2274,10 @@
     "named": false
   },
   {
+    "type": "%",
+    "named": false
+  },
+  {
     "type": "&&",
     "named": false
   },
@@ -2271,6 +2291,10 @@
   },
   {
     "type": "*",
+    "named": false
+  },
+  {
+    "type": "**",
     "named": false
   },
   {
@@ -2363,6 +2387,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "and",
     "named": false
   },
   {
@@ -2461,6 +2489,10 @@
   {
     "type": "number_literal",
     "named": true
+  },
+  {
+    "type": "or",
+    "named": false
   },
   {
     "type": "override",

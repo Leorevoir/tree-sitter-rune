@@ -47,6 +47,8 @@ const BINARY_OPERATORS = [
   ["-", PREC.ADD],
   ["*", PREC.MULTIPLY],
   ["/", PREC.MULTIPLY],
+  ["%", PREC.MULTIPLY],
+  ["**", PREC.MULTIPLY],
   ["==", PREC.EQUAL],
   ["!=", PREC.EQUAL],
   ["<", PREC.RELATIONAL],
@@ -59,6 +61,8 @@ const BINARY_OPERATORS = [
   ["/=", PREC.ASSIGNMENT],
   ["&&", PREC.LOGICAL_AND],
   ["||", PREC.LOGICAL_OR],
+  ["and", PREC.LOGICAL_AND],
+  ["or", PREC.LOGICAL_OR],
 ];
 
 const comma_sep = (rule) => {
