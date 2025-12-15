@@ -216,6 +216,7 @@ module.exports = grammar({
         $.unary_expression,
         $.prefix_expression,
         $.postfix_expression,
+        $.parenthesized_expression,
         $.identifier,
         $.number_literal,
         $.string_literal,
@@ -250,6 +251,8 @@ module.exports = grammar({
           field("operator", choice("++", "--")),
         ),
       ),
+
+    parenthesized_expression: ($) => seq("(", $._expression, ")"),
 
     binary_expression: ($) =>
       choice(
