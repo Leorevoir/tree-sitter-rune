@@ -12,16 +12,17 @@ const PREC = {
   ASSIGNMENT: 1,
   LOGICAL_OR: 2,
   LOGICAL_AND: 3,
-  EQUAL: 4,
-  RELATIONAL: 5,
-  ADD: 6,
-  MULTIPLY: 7,
-  UNARY: 8,
-  CAST: 9,
-  TRY: 10,
-  CALL: 11,
-  FIELD: 12,
-  SUBSCRIPT: 13,
+  LOGICAL_NOT: 4,
+  EQUAL: 5,
+  RELATIONAL: 6,
+  ADD: 7,
+  MULTIPLY: 8,
+  UNARY: 9,
+  CAST: 10,
+  TRY: 11,
+  CALL: 12,
+  FIELD: 13,
+  SUBSCRIPT: 14,
 };
 
 const PRIMITIVES = [
@@ -61,8 +62,10 @@ const BINARY_OPERATORS = [
   ["/=", PREC.ASSIGNMENT],
   ["&&", PREC.LOGICAL_AND],
   ["||", PREC.LOGICAL_OR],
+  ["!", PREC.LOGICAL_NOT],
   ["and", PREC.LOGICAL_AND],
   ["or", PREC.LOGICAL_OR],
+  ["not", PREC.LOGICAL_NOT],
 ];
 
 const comma_sep = (rule) => {
