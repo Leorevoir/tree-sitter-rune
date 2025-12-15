@@ -62,10 +62,8 @@ const BINARY_OPERATORS = [
   ["/=", PREC.ASSIGNMENT],
   ["&&", PREC.LOGICAL_AND],
   ["||", PREC.LOGICAL_OR],
-  ["!", PREC.LOGICAL_NOT],
   ["and", PREC.LOGICAL_AND],
   ["or", PREC.LOGICAL_OR],
-  ["not", PREC.LOGICAL_NOT],
 ];
 
 const comma_sep = (rule) => {
@@ -241,7 +239,7 @@ module.exports = grammar({
       prec.right(
         PREC.UNARY,
         seq(
-          field("operator", choice("-", "!")),
+          field("operator", choice("-", "!", "not")),
           field("argument", $._expression),
         ),
       ),

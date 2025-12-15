@@ -19,6 +19,8 @@
 "stop" @keyword.repeat
 "next" @keyword.repeat
 
+"not" @keyword.operator
+
 ;----------------------------------
 ; types
 ;---------------------------------
