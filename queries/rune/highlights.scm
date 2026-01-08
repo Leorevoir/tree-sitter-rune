@@ -38,6 +38,7 @@
 (string_literal) @string
 (char_literal) @character
 (number_literal) @number
+(hex_literal) @number
 (boolean_literal) @boolean
 (null_literal) @constant.builtin
 

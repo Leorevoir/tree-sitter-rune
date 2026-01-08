@@ -247,6 +247,7 @@ module.exports = grammar({
         $.parenthesized_expression,
         $.identifier,
         $.number_literal,
+        $.hex_literal,
         $.string_literal,
         $.char_literal,
         $.boolean_literal,
@@ -363,6 +364,7 @@ module.exports = grammar({
     field_identifier: ($) => alias($.identifier, "field_identifier"),
 
     number_literal: ($) => /\d[\d_]*(\.\d+)?/,
+    hex_literal: ($) => /0[xX][\da-fA-F][\da-fA-F_]*/,
     string_literal: ($) => /"[^"]*"/,
     char_literal: ($) => /'(\\.|[^\\'])'/,
     boolean_literal: ($) => choice("true", "false"),

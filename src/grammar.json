@@ -978,6 +978,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "hex_literal"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string_literal"
         },
         {
@@ -2101,6 +2105,10 @@
     "number_literal": {
       "type": "PATTERN",
       "value": "\\d[\\d_]*(\\.\\d+)?"
+    },
+    "hex_literal": {
+      "type": "PATTERN",
+      "value": "0[xX][\\da-fA-F][\\da-fA-F_]*"
     },
     "string_literal": {
       "type": "PATTERN",
