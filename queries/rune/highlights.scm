@@ -13,7 +13,9 @@
 "in" @keyword.operator
 "to" @keyword.operator
 "return" @keyword.return
+"somewhere" @keyword
 "override" @keyword.modifier
+"export" @keyword.modifier
 (self_parameter) @variable.builtin
 
 "stop" @keyword.repeat
@@ -100,6 +102,7 @@
 
 ; INFO: overrides @variable for function definitions
 (function_definition name: (identifier) @function)
+(function_declaration name: (identifier) @function)
 
 (call_expression
   function: (identifier) @function.call)

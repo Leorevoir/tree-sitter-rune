@@ -75,17 +75,28 @@ module.exports = grammar({
 
   extras: ($) => [/\s/, $.comment],
 
-  conflicts: ($) => [[$.type_identifier, $._expression]],
+  conflicts: ($) => [
+    [$.type_identifier, $._expression],
+    [$.variable_declaration, $._expression],
+  ],
 
   rules: {
     source_file: ($) => repeat($._top_level_item),
 
     _top_level_item: ($) =>
-      choice($.function_definition, $.struct_definition, $.statement),
+      choice(
+        $.function_definition,
+        $.struct_definition,
+        $.somewhere_statement,
+        $.statement,
+      ),
+
+    somewhere_statement: ($) =>
+      seq("somewhere", "{", repeat($.function_declaration), "}"),
 
     function_definition: ($) =>
       seq(
-        optional("override"),
+        repeat(choice("override", "export")),
         "def",
         field("name", $.identifier),
         field("parameters", $.parameter_list),
@@ -96,6 +107,21 @@ module.exports = grammar({
           ),
         ),
         field("body", $.block),
+      ),
+
+    function_declaration: ($) =>
+      seq(
+        repeat(choice("override", "export")),
+        "def",
+        field("name", $.identifier),
+        field("parameters", $.parameter_list),
+        optional(
+          seq(
+            field("arrow", choice("->", "~>")),
+            field("return_type", $._type),
+          ),
+        ),
+        ";",
       ),
 
     parameter_list: ($) =>
@@ -214,6 +240,7 @@ module.exports = grammar({
         $.struct_expression,
         $.try_expression,
         $.cast_expression,
+        $.typed_expression,
         $.unary_expression,
         $.prefix_expression,
         $.postfix_expression,
@@ -308,6 +335,12 @@ module.exports = grammar({
       prec.left(
         PREC.CAST,
         seq(field("value", $._expression), "as", field("type", $._type)),
+      ),
+
+    typed_expression: ($) =>
+      prec(
+        PREC.CAST,
+        seq(field("value", $._expression), ":", field("type", $._type)),
       ),
 
     struct_expression: ($) =>

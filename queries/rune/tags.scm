@@ -4,6 +4,9 @@
 (function_definition
   name: (identifier) @name) @definition.function
 
+(function_declaration
+  name: (identifier) @name) @definition.function
+
 (field_declaration
   name: (field_identifier) @name) @definition.field
 
